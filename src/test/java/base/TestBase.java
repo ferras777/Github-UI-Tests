@@ -9,6 +9,12 @@ import org.junit.jupiter.api.BeforeEach;
 
 public class TestBase {
 
+    protected final String URL = "https://github.com/";
+    protected final String login = "";
+    protected final String password = "";
+    protected final String repositoryName = "qaguru-test";
+    protected final String newIssue = "New Issue";
+
     @BeforeEach
     void setUp() {
         Configuration.headless = true;

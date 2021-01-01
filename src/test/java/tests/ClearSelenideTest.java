@@ -2,6 +2,8 @@ package tests;
 
 import base.TestBase;
 import com.codeborne.selenide.Condition;
+import io.qameta.allure.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selectors.byText;
@@ -9,13 +11,13 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class ClearSelenideTest extends TestBase {
 
-    private final String URL = "https://github.com/";
-    private final String login = "";
-    private final String password = "";
-    private final String repositoryName = "qaguru-test";
-    private final String newIssue = "New Issue";
-
     @Test
+    @DisplayName("Sign in and create issue")
+    @Feature("Issues")
+    @Story("User should can create issue")
+    @Link(url = "https://github.com", name = "Github")
+    @Owner("ilyaM")
+    @Severity(SeverityLevel.CRITICAL)
     public void singInIntoGithubAccountAndOpenNewIssueTest() {
         open(URL);
         $(byText("Sign in")).click();

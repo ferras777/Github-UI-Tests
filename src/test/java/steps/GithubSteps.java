@@ -5,10 +5,6 @@ import pages.*;
 
 public class GithubSteps {
 
-    private final String login = "";
-    private final String password = "";
-    private final String repositoryName = "qaguru-test";
-
     GithubMainPage githubMainPage = new GithubMainPage();
     GithubLoginPage githubLoginPage = new GithubLoginPage();
     GithubMainAccPage githubMainAccPage = new GithubMainAccPage();
@@ -17,7 +13,7 @@ public class GithubSteps {
 
 
     @Step(value = "Открыть главную страницу Github и войти в аккаунт")
-    public void openGithubMainPageAndSignInIntoAccount() {
+    public void openGithubMainPageAndSignInIntoAccount(String login, String password) {
         githubMainPage.openMainPage();
         githubMainPage.clickSignInButton();
         githubLoginPage.fillLoginField(login);
@@ -26,7 +22,7 @@ public class GithubSteps {
     }
 
     @Step(value = "Открыть новый Issue с именем {title}")
-    public void openNewIssue(String title) {
+    public void openRepositoryPageAndOpenNewIssue(String repositoryName, String title) {
         githubMainAccPage.clickRepositoryByName(repositoryName);
         githubRepositoryPage.clickIssuesLink();
         githubIssuesPage.clickNewIssueButton();

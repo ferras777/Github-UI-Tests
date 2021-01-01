@@ -13,6 +13,7 @@ public class GithubMainPage {
     public void openMainPage() {
         open(URL);
     }
+
     @Step(value = "Нажать кнопку войти")
     public void clickSignInButton() {
         $(byText("Sign in")).click();

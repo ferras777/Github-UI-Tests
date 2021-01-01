@@ -1,20 +1,24 @@
 package tests;
 
 import base.TestBase;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import steps.GithubSteps;
 
 public class SelenideStepAnnotationTest extends TestBase {
 
-    private final String newIssue = "New Issue";
-
     GithubSteps githubSteps = new GithubSteps();
 
     @Test
-    @DisplayName(value = "Войти в аккаунт и создать новую Issue в репозитории")
+    @DisplayName("Sign in and create issue with steps")
+    @Feature("Issues")
+    @Story("User should can create issue")
+    @Link(url = "https://github.com", name = "Github")
+    @Owner("ilyaM")
+    @Severity(SeverityLevel.CRITICAL)
     public void singInIntoGithubAccountAndOpenNewIssueTest() {
-        githubSteps.openGithubMainPageAndSignInIntoAccount();
-        githubSteps.openNewIssue(newIssue);
+        githubSteps.openGithubMainPageAndSignInIntoAccount(login, password);
+        githubSteps.openRepositoryPageAndOpenNewIssue(repositoryName, newIssue);
     }
 }

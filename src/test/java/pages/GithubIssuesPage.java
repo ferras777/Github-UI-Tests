@@ -19,19 +19,23 @@ public class GithubIssuesPage {
         $(byText("assign yourself")).click();
     }
 
+    @Step(value = "Кликнуть на кнопку метки")
     private void clickLabelsButton() {
         $x("//*[@id='labels-select-menu']/summary/*").click();
     }
+
     @Step(value = "Выбрать метку 'Баг'")
     public void pickBugLabel() {
         clickLabelsButton();
         $(byText("bug")).click();
         $("body").click();
     }
+
     @Step(value = "Вставить заголовок '{issueTitle}'")
     public void fillIssueTitle(String issueTitle) {
         $("#issue_title").val(issueTitle);
     }
+
     @Step(value = "Нажать кнопку создать")
     public void clickSubmitButton() {
         $(byText("Submit new issue")).click();
