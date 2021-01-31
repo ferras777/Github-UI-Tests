@@ -5,7 +5,7 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
 
 public class TestBase {
 
@@ -15,8 +15,8 @@ public class TestBase {
     protected final String repositoryName = "qaguru-test";
     protected final String newIssue = "New Issue";
 
-    @BeforeEach
-    void setUp() {
+    @BeforeAll
+    static void setUp() {
         Configuration.headless = true;
         Configuration.browserSize = "1920x1080";
         Selenide.clearBrowserCookies();
