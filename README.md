@@ -1,2 +1,2 @@
-# Github selenide tests
+# Github UI Tests
 ### Selenide + Allure + Owner
