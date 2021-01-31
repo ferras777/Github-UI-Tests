@@ -23,7 +23,6 @@ public class TestBase {
     static void setUp() {
         Configuration.headless = true;
         Configuration.browserSize = "1920x1080";
-        Selenide.clearBrowserCookies();
         SelenideLogger.addListener("allure", new AllureSelenide().screenshots(true));
     }
 
