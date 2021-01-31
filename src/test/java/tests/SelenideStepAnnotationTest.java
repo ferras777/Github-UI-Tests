@@ -19,6 +19,6 @@ public class SelenideStepAnnotationTest extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     public void singInIntoGithubAccountAndOpenNewIssueTest() {
         githubSteps.openGithubMainPageAndSignInIntoAccount(login, password);
-        githubSteps.openRepositoryPageAndOpenNewIssue(repositoryName, newIssue);
+        githubSteps.openRepositoryPageAndOpenNewIssue(repositoryName, issue);
     }
 }

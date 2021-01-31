@@ -31,7 +31,7 @@ public class ClearSelenideTest extends TestBase {
         $x("//*[@id='labels-select-menu']/summary/*").click();
         $(byText("bug")).click();
         $("body").click();
-        $("#issue_title").val(newIssue);
+        $("#issue_title").val(issue);
         $(byText("Submit new issue")).click();
         $("body").shouldHave(Condition.text("Open"));
     }

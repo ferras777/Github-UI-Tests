@@ -30,14 +30,14 @@ public class LambdaSelenideTest extends TestBase {
         step("Открываем репозиторий " + repositoryName, () -> {
             $("[title='" + repositoryName + "']").click();
         });
-        step("Создаем новый Issue c названием " + newIssue, () -> {
+        step("Создаем новый Issue c названием " + issue, () -> {
             $("[data-tab-item='i1issues-tab']").click();
             $x("//*[text()='New issue']/..").click();
             $(byText("assign yourself")).click();
             $x("//*[@id='labels-select-menu']/summary/*").click();
             $(byText("bug")).click();
             $("body").click();
-            $("#issue_title").val(newIssue);
+            $("#issue_title").val(issue);
             $(byText("Submit new issue")).click();
             $("body").shouldHave(Condition.text("Open"));
         });

@@ -7,13 +7,17 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 
+import java.net.URL;
+
+import static config.ConfigHelper.*;
+
 public class TestBase {
 
-    protected final String URL = "https://github.com/";
-    protected final String login = "";
-    protected final String password = "";
-    protected final String repositoryName = "qaguru-test";
-    protected final String newIssue = "New Issue";
+    protected final URL URL = getURL();
+    protected final String login = getGithubLogin();
+    protected final String password = getGithubPassword();
+    protected final String repositoryName = getRepositoryName();
+    protected final String issue = getIssueName();
 
     @BeforeAll
     static void setUp() {
